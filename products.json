@@ -3,6 +3,7 @@
     "name": "MWC MIL-W-46374B 데저트 카키 - 실버X카키",
     "price": 159000,
     "image": "https://shop-phinf.pstatic.net/20260225_52/1772001364944Tu8c7_JPEG/18742769081877677_1866169945.jpg?type=o1000",
+    "hoverImage": "https://supplyroute.co.kr/web/product/extra/big/202603/927d51db8a863af8df13f22a5b94b80e.jpg",
     "purchaseUrl": "https://brand.naver.com/supplyroute/products/13166525270",
     "group": "featured"
   },
@@ -10,6 +11,7 @@
     "name": "MWC MIL-W-46374B 데저트 카키 - 실버X블랙",
     "price": 159000,
     "image": "https://shop-phinf.pstatic.net/20260225_54/1772001535589rMDlO_JPEG/106134382727565814_436898389.jpg?type=o1000",
+    "hoverImage": "https://supplyroute.co.kr/web/product/extra/big/202603/daa54cf6936f25f73e9f5df74191ebd3.jpg",
     "purchaseUrl": "https://brand.naver.com/supplyroute/products/13166536495",
     "group": "featured"
   },
@@ -17,18 +19,20 @@
     "name": "MWC MIL-W-46374B 데저트 카키 - 실버X데저트",
     "price": 159000,
     "image": "https://shop-phinf.pstatic.net/20260225_70/1772001697132mP6OG_JPEG/21974050238890101_1155944818.jpg?type=o1000",
+    "hoverImage": "https://supplyroute.co.kr/web/product/extra/big/202603/017976edce1de3cf5bc336043a193c5b.jpg",
     "purchaseUrl": "https://brand.naver.com/supplyroute/products/13166547992",
     "group": "featured"
   },
   {
     "name": "MWC MK XI 패스파인더 - 실버X블랙",
     "price": 159000,
-    "image": "https://supplyroute.godohosting.com/detail/mwc/mkxi-blk-sr-main.jpg",
+    "image": "https://supplyroute.co.kr/web/product/big/202602/5b00ea59aa42868a2ab8374a2ff0c829.jpg",
+    "hoverImage": "https://supplyroute.co.kr/web/product/extra/big/202602/e8653d1751527533d4d348b7f83312bb.jpg",
     "purchaseUrl": "https://brand.naver.com/supplyroute/search?q=MWC%20MK%20XI%20%ED%8C%A8%EC%8A%A4%ED%8C%8C%EC%9D%B8%EB%8D%94%20%EC%8B%A4%EB%B2%84%20%EB%B8%94%EB%9E%99",
     "group": "other",
-    "imageScale": 1.08,
-    "imageShiftX": "2%",
-    "imageShiftY": "-7%"
+    "imageScale": 1,
+    "imageShiftX": "0%",
+    "imageShiftY": "0%"
   },
   {
     "name": "MWC 베트남전 미군시계 (영국군 버전) - 실버X올리브",

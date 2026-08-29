@@ -39,25 +39,52 @@ const createProductCard = (product, index, variant = 'default') => {
   figure.className = 'catalog-card-image';
 
   const image = document.createElement('img');
+  image.className = 'catalog-card-photo catalog-card-photo-main';
   image.src = product.image;
   image.alt = `${product.name} 제품 이미지`;
   image.loading = 'lazy';
   image.decoding = 'async';
   image.referrerPolicy = 'no-referrer';
   if (Number.isFinite(product.imageScale) && product.imageScale > 0) {
-    image.style.setProperty('--product-scale', String(product.imageScale));
+    figure.style.setProperty('--product-scale', String(product.imageScale));
   }
   if (typeof product.imageShiftX === 'string' && product.imageShiftX.trim()) {
-    image.style.setProperty('--product-shift-x', product.imageShiftX.trim());
+    figure.style.setProperty('--product-shift-x', product.imageShiftX.trim());
   }
   if (typeof product.imageShiftY === 'string' && product.imageShiftY.trim()) {
-    image.style.setProperty('--product-shift-y', product.imageShiftY.trim());
+    figure.style.setProperty('--product-shift-y', product.imageShiftY.trim());
   }
   image.addEventListener('error', () => {
     figure.classList.add('is-image-error');
     image.hidden = true;
   }, { once: true });
   figure.append(image);
+
+  if (typeof product.hoverImage === 'string' && product.hoverImage.trim()) {
+    card.classList.add('has-hover-image');
+    const hoverImage = document.createElement('img');
+    hoverImage.className = 'catalog-card-photo catalog-card-photo-hover';
+    hoverImage.dataset.src = product.hoverImage.trim();
+    hoverImage.alt = `${product.name} 두 번째 제품 이미지`;
+    hoverImage.loading = 'lazy';
+    hoverImage.decoding = 'async';
+    hoverImage.referrerPolicy = 'no-referrer';
+    hoverImage.setAttribute('aria-hidden', 'true');
+    hoverImage.addEventListener('error', () => {
+      hoverImage.hidden = true;
+      card.classList.remove('has-hover-image');
+    }, { once: true });
+
+    const loadHoverImage = () => {
+      if (!hoverImage.getAttribute('src')) {
+        hoverImage.src = hoverImage.dataset.src;
+      }
+    };
+
+    card.addEventListener('mouseenter', loadHoverImage, { once: true });
+    card.addEventListener('focusin', loadHoverImage, { once: true });
+    figure.append(hoverImage);
+  }
 
   const body = document.createElement('div');
   body.className = 'catalog-card-body';

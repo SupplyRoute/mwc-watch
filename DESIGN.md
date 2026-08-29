@@ -1,20 +1,22 @@
 ---
 version: alpha
 name: "MWC 시계"
-description: "군용 필드 매뉴얼의 정밀함을 현대 손목시계 브랜드 경험으로 번역한 한국어 브랜드 사이트"
+description: "검게 산화된 군용 계측기와 오래된 황동 눈금의 중후함을 현대 손목시계 경험으로 번역한 한국어 브랜드 사이트"
 colors:
-  ink: "#101311"
-  ink-soft: "#1c211d"
-  paper: "#ebe8dc"
-  paper-bright: "#f4f1e7"
-  field: "#666b55"
-  field-dark: "#4b5040"
-  signal: "#d88431"
-  signal-deep: "#af5d20"
-  mist: "#afb3a4"
+  ink: "#090a08"
+  ink-soft: "#151510"
+  paper: "#d8d0c0"
+  paper-bright: "#f2ecdf"
+  field: "#766247"
+  field-dark: "#11110e"
+  signal: "#b88b4a"
+  signal-deep: "#8f6738"
+  mist: "#a8a091"
 typography:
   display:
     fontFamily: "Arial Narrow, Bahnschrift SemiCondensed, Noto Sans KR, Malgun Gothic, sans-serif"
+  editorial:
+    fontFamily: "Noto Serif KR, Batang, Georgia, serif"
   body:
     fontFamily: "Pretendard, Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, sans-serif"
   mono:
@@ -27,10 +29,18 @@ spacing:
   page-pad: "clamp(24px, 5vw, 84px)"
   page-max: "1440px"
 components:
-  button: {}
-  navigation: {}
-  story-card: {}
-  field-rail: {}
+  button:
+    minHeight: "52px"
+    borderRadius: "2px"
+  navigation:
+    desktopHeight: "78px"
+    mobileHeight: "68px"
+  story-card:
+    borderWidth: "1px"
+    borderRadius: "2px"
+  field-rail:
+    height: "142px"
+    lineWidth: "1px"
 ---
 
 # MWC 시계 Design System
@@ -39,7 +49,7 @@ components:
 
 ### Creative North Star
 
-1970년대 군용 시계의 보급 규격표와 야전용 등고선 지도를, 수집품 진열장이 아니라 오늘의 정밀 제품 카탈로그로 편집한다. 모든 표식과 선은 실제 정보 구조를 설명해야 하며, 장식만을 위한 밀리터리 요소는 쓰지 않는다.
+검게 산화된 군용 계측기 위에 오래된 황동 눈금과 정비 도면을 펼친다. 1970년대 보급 규격표의 정밀함은 유지하되, 수집품 진열장이나 과장된 럭셔리 숍이 아니라 오늘의 중후한 제품 카탈로그로 편집한다. 모든 표식과 선은 실제 정보 구조를 설명해야 하며, 장식만을 위한 밀리터리·럭셔리 요소는 쓰지 않는다.
 
 ### Product context and register
 
@@ -48,18 +58,18 @@ components:
 - **Locale and language policy:** 소유 콘텐츠는 한국어, 모델명·규격·기술 표식은 필요한 범위에서 영어와 라틴 문자를 병기한다.
 - **Usage scene:** 모바일 탐색을 우선하고, 데스크톱에서는 제품 사진과 필드 로그 레일이 더 많은 맥락을 제공한다.
 - **Register:** 브랜드/콘텐츠 사이트. 애플리케이션형 CRUD 계약은 적용하지 않는다.
-- **Memorable signature:** 화면 오른쪽의 수직 필드 로그가 현재 섹션과 스크롤 좌표를 계기판처럼 보여준다.
+- **Memorable signature:** 영웅 이미지 뒤의 황동 측정 링과 화면 오른쪽의 수직 필드 로그가 시계를 정밀 계측 중인 장면처럼 보이게 한다.
 - **Restraint:** 제품 설명, 내비게이션, 긴 한국어 문단에서는 선명한 대비와 편안한 행간이 표현보다 우선한다.
-- **Anti-references:** 전술 장비 쇼핑몰의 위장 패턴, 사이버펑크 네온, 과도한 빈티지 낡음, 둥근 SaaS 카드 UI를 피한다.
+- **Anti-references:** 전술 장비 쇼핑몰의 위장 패턴, 사이버펑크 네온, 왕관·메달·별점으로 고급스러움을 주장하는 전형적인 럭셔리몰, 과도한 빈티지 낡음, 둥근 SaaS 카드 UI를 피한다.
 - **Token ownership/runtime mapping:** 이 문서는 디자인 의도를 규정하고 `styles.css`의 `:root` 변수가 런타임 토큰을 구현한다. 빌드나 생성 단계는 없다.
 
 ## Colors
 
-`ink`와 `paper`가 주 표면을 만들며, `field-dark`는 제품 섹션에만 사용한다. `signal`은 야광 인덱스가 아니라 측정 장비의 표시등처럼 링크·진행·초점 등 중요한 신호에만 쓴다. 본문 대비는 WCAG AA를 목표로 하며 강제 색상 모드에서는 시스템 색을 존중한다.
+`ink`와 `ink-soft`가 산화된 금속의 주 표면을 만들고, `paper`와 `paper-bright`는 본문과 정비 문서에만 사용한다. `field-dark`는 깊이가 필요한 제품 표면, `field`는 스크롤바와 보조 눈금에 쓴다. `signal`과 `signal-deep`은 노화된 황동으로, 링크·진행·초점·측정선처럼 중요한 신호에만 쓴다. 본문 대비는 WCAG AA를 목표로 하며 강제 색상 모드에서는 시스템 색을 존중한다.
 
 ## Typography
 
-압축된 디스플레이 스택은 군용 규격의 좁고 높은 숫자 비례를 가져오고, 한국어 본문은 Pretendard/Noto Sans KR/맑은 고딕 계열로 안정적으로 읽힌다. 기술 표식은 모노스페이스를 쓰되 본문에는 사용하지 않는다. 영문 대문자는 짧은 계기 표식에만 한정한다.
+압축된 디스플레이 스택은 군용 규격의 좁고 높은 숫자 비례를 가져오고, 에디토리얼 명조 스택은 핵심 문장과 이야기 제목에만 절제해 사용해 중후함을 더한다. 한국어 본문은 Pretendard/Noto Sans KR/맑은 고딕 계열로 안정적으로 읽힌다. 기술 표식은 모노스페이스를 쓰되 본문에는 사용하지 않는다. 영문 대문자는 짧은 계기 표식에만 한정한다.
 
 ## Layout
 
@@ -67,7 +77,7 @@ components:
 
 ## Elevation & Depth
 
-정적인 콘텐츠 카드에는 그림자를 쓰지 않는다. 깊이는 어두운 표면의 명도 차, 가는 경계선, 제품 사진의 실제 조명으로 만든다. 헤더에만 탐색 문맥을 유지하기 위한 약한 배경 블러가 허용된다.
+정적인 콘텐츠 카드에는 그림자를 쓰지 않는다. 깊이는 검은 표면의 미세한 명도 차, 황동색 가는 경계선, 제품 사진의 실제 조명으로 만든다. 제품 사진과 정비 도면 프레임에는 금속판에서 살짝 들어 올려진 듯한 제한적인 깊은 그림자를 허용한다. 헤더에는 탐색 문맥을 유지하기 위한 약한 배경 블러가 허용된다.
 
 ## Shapes
 
@@ -81,7 +91,7 @@ components:
 
 ### Buttons and actions
 
-주 행동은 주황색 실색 버튼, 보조 행동은 밑줄 텍스트 링크다. 버튼은 52px 이상 높이를 유지하며 상태 변화로 크기가 바뀌지 않는다. 모바일에서는 주요 CTA가 전폭이 된다.
+주 행동은 황동색 실색 버튼, 보조 행동은 밑줄 텍스트 링크다. 버튼은 52px 이상 높이를 유지하며 상태 변화로 크기가 바뀌지 않는다. 모바일에서는 주요 CTA가 전폭이 된다.
 
 ### Navigation and data display
 

@@ -28,8 +28,10 @@ python -m http.server 8000
 - 홈 착용 이미지: `assets/desert-khaki-on-wrist.jpg`
 - 제품 다이얼 이미지: `assets/desert-khaki-dial-detail.jpg`
 - 제품 야광·케이스백 이미지: `assets/desert-khaki-lume.jpg`, `assets/desert-khaki-caseback.jpg`
+- 무브먼트 조립·분해도: `assets/miyota-2035-exploded-view.jpg`
 - 디자인 원칙과 토큰: `DESIGN.md`
 
 제작자 사진, 연락처와 일부 이야기 글은 현재 자연스러운 임시 문구로 채워져 있습니다. 실제 정보가 정해지면 반드시 교체해 주세요.
 
 제품 사진은 [서플라이루트의 MIL-W-46374B 데저트 카키 컬렉션 상품 페이지](https://supplyroute.co.kr/product/detail.html?product_no=4037&cate_no=449&display_group=3)에서 가져왔습니다.
+MIYOTA 2035 조립·분해도와 무브먼트 사양은 [MIYOTA 공식 Cal. 2035 페이지](https://miyotamovement.com/product/2035/)를 참조했습니다.

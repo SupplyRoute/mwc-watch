@@ -133,6 +133,24 @@
 
   const renderBody = (source) => {
     const box = el('div', 'post-body');
+    const appendInlineText = (parent, text) => {
+      const pattern = /\[([^\]]+)\]\((https?:\/\/[^)\s]+|[^)\s]+\.html|[^)\s]+\/)\)/g;
+      let cursor = 0;
+      let match = pattern.exec(text);
+      while (match) {
+        if (match.index > cursor) parent.append(document.createTextNode(text.slice(cursor, match.index)));
+        const link = el('a', null, match[1]);
+        link.href = match[2];
+        if (/^https?:\/\//i.test(match[2])) {
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+        }
+        parent.append(link);
+        cursor = pattern.lastIndex;
+        match = pattern.exec(text);
+      }
+      if (cursor < text.length) parent.append(document.createTextNode(text.slice(cursor)));
+    };
     const blocks = String(source || '').replace(/\r\n/g, '\n').split(/\n\s*\n/);
     blocks.forEach((rawBlock) => {
       const block = rawBlock.trim();
@@ -140,12 +158,18 @@
       const lines = block.split('\n');
       if (lines.every((line) => /^- /.test(line.trim()))) {
         const list = el('ul');
-        lines.forEach((line) => list.append(el('li', null, line.trim().slice(2))));
+        lines.forEach((line) => {
+          const item = el('li');
+          appendInlineText(item, line.trim().slice(2));
+          list.append(item);
+        });
         box.append(list);
       } else if (/^## /.test(block)) {
         box.append(el('h2', null, block.slice(3).trim()));
       } else {
-        box.append(el('p', null, block));
+        const paragraph = el('p');
+        appendInlineText(paragraph, block);
+        box.append(paragraph);
       }
     });
     return box;

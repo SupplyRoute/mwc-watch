@@ -1,0 +1,21 @@
+# MWC 시계
+
+군용 필드 워치의 목적과 비례를 오늘의 일상에 맞게 다시 설계하는 한국어 브랜드 사이트입니다.
+
+## 파는 것
+
+MWC MIL-W-46374B 데저트카키 손목시계.
+
+## 주요 페이지
+
+- [홈](https://supplyroute.github.io/mwc-watch/): 브랜드 소개, 대표 제품, 제품 상세, 연락처.
+- [이야기](https://supplyroute.github.io/mwc-watch/story/): 제품과 복각 과정을 기록하는 블로그.
+- [제품 구매](https://brand.naver.com/supplyroute/products/13166525270): 서플라이루트 공식 스토어의 데저트카키 제품 페이지.
+
+## 이야기(블로그)
+
+- [MWC는 어떤 군용 시계를 만들어온 브랜드인가요?](https://supplyroute.github.io/mwc-watch/story/mwc-military-watch-history.html): MWC의 군용 시계 배경과 데저트카키를 소개할 때 보는 기준.
+- [MIL-W-46374B는 어떤 군용 시계 규격인가요?](https://supplyroute.github.io/mwc-watch/story/mil-w-46374b-history.html): MIL-W-46374B 규격과 H3 표기, 38mm 선택의 이유.
+- [왜 모두 같은 필드 워치처럼 보여도 다르게 느껴질까요?](https://supplyroute.github.io/mwc-watch/story/why-field-watches-feel-different.html): 크기, 표기, 스트랩에 따라 달라지는 필드 워치의 인상.
+- [우리가 이 브랜드를 시작한 이유](https://supplyroute.github.io/mwc-watch/story/post.html?id=first-story-20260829): 브랜드가 시작된 첫 마음에 관한 샘플 글.
+- [패키지 하나를 바꾸는 데 석 달이 걸린 이야기](https://supplyroute.github.io/mwc-watch/story/post.html?id=behind-package-20260829): 제품 개선 과정을 다룬 샘플 글.

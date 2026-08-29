@@ -14,13 +14,13 @@ colors:
   mist: "#a8a091"
 typography:
   display:
-    fontFamily: "Arial Narrow, Bahnschrift SemiCondensed, Noto Sans KR, Malgun Gothic, sans-serif"
+    fontFamily: "Pretendard Variable, Pretendard, Noto Sans KR, Malgun Gothic, sans-serif"
   editorial:
-    fontFamily: "Noto Serif KR, Batang, Georgia, serif"
+    fontFamily: "Pretendard Variable, Pretendard, Noto Sans KR, Malgun Gothic, sans-serif"
   body:
-    fontFamily: "Pretendard, Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, sans-serif"
+    fontFamily: "Pretendard Variable, Pretendard, Noto Sans KR, Malgun Gothic, sans-serif"
   mono:
-    fontFamily: "IBM Plex Mono, Cascadia Mono, Consolas, monospace"
+    fontFamily: "Pretendard Variable, Pretendard, Noto Sans KR, Malgun Gothic, sans-serif"
 rounded:
   DEFAULT: "2px"
   circle: "50%"
@@ -69,7 +69,7 @@ components:
 
 ## Typography
 
-압축된 디스플레이 스택은 군용 규격의 좁고 높은 숫자 비례를 가져오고, 에디토리얼 명조 스택은 핵심 문장과 이야기 제목에만 절제해 사용해 중후함을 더한다. 한국어 본문은 Pretendard/Noto Sans KR/맑은 고딕 계열로 안정적으로 읽힌다. 기술 표식은 모노스페이스를 쓰되 본문에는 사용하지 않는다. 영문 대문자는 짧은 계기 표식에만 한정한다.
+모든 텍스트 역할은 Pretendard Variable과 Pretendard로 통일한다. 제목은 700–900의 굵기와 촘촘한 자간, 본문은 400–700의 굵기와 넉넉한 행간, 기술 표식은 작은 크기와 넓은 자간으로 구분한다. 서로 다른 서체에 기대지 않고 한 글꼴 안의 굵기·크기·자간 대비로 군용 계측기의 정밀함과 중후함을 유지한다.
 
 ## Layout
 

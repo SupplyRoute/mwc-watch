@@ -13,10 +13,10 @@
   --brass-rgb: 184 139 74;
   --paper-rgb: 242 236 223;
   --ink-rgb: 9 10 8;
-  --display: "Arial Narrow", "Bahnschrift SemiCondensed", "Noto Sans KR", "Malgun Gothic", sans-serif;
-  --editorial: "Noto Serif KR", Batang, Georgia, serif;
-  --body: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  --mono: "IBM Plex Mono", "Cascadia Mono", Consolas, monospace;
+  --display: "Pretendard Variable", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --editorial: "Pretendard Variable", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --body: "Pretendard Variable", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --mono: "Pretendard Variable", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
   --header-h: 78px;
   --page-pad: clamp(24px, 5vw, 84px);
   --content-max: 1440px;

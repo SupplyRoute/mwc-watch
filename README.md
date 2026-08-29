@@ -30,6 +30,7 @@ python -m http.server 8000
 - 제품 야광·케이스백 이미지: `assets/desert-khaki-lume.jpg`, `assets/desert-khaki-caseback.jpg`
 - 무브먼트 조립·분해도: `assets/miyota-2035-exploded-view.jpg`
 - 디자인 원칙과 토큰: `DESIGN.md`
+- 웹폰트: [Pretendard Variable v1.3.9](https://github.com/orioncactus/pretendard) 가변 다이나믹 서브셋
 
 제작자 사진, 연락처와 일부 이야기 글은 현재 자연스러운 임시 문구로 채워져 있습니다. 실제 정보가 정해지면 반드시 교체해 주세요.
 

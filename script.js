@@ -11,6 +11,7 @@ const railSection = document.querySelector('[data-rail-section]');
 const homeProducts = document.querySelector('[data-home-products]');
 const productList = document.querySelector('[data-product-list]');
 const productCount = document.querySelector('[data-product-count]');
+const storyList = document.querySelector('[data-story-list]');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const priceFormatter = new Intl.NumberFormat('ko-KR');
 
@@ -136,6 +137,112 @@ const loadProducts = async () => {
   }
 };
 
+const formatStoryDate = (value) => {
+  const parts = String(value || '').split('-');
+  if (parts.length !== 3) return String(value || '');
+  return `${parts[0]}.${parts[1]}.${parts[2]}`;
+};
+
+const getStoryUrl = (post) => {
+  const customUrl = typeof post.url === 'string' ? post.url.trim() : '';
+  if (customUrl) {
+    if (/^(?:https?:)?\/\//i.test(customUrl) || customUrl.startsWith('/')) return customUrl;
+    return `story/${customUrl.replace(/^\.\//, '')}`;
+  }
+  return `story/post.html?id=${encodeURIComponent(String(post.id || ''))}`;
+};
+
+const createStoryCard = (post, index) => {
+  const article = document.createElement('article');
+  article.className = 'story-card story-card-feed';
+
+  const indexPanel = document.createElement('div');
+  indexPanel.className = 'story-card-index';
+  indexPanel.setAttribute('aria-hidden', 'true');
+  const indexLabel = document.createElement('span');
+  indexLabel.textContent = `FIELD NOTE / ${String(index + 1).padStart(2, '0')}`;
+  const indexNumber = document.createElement('strong');
+  indexNumber.textContent = String(index + 1).padStart(2, '0');
+  indexPanel.append(indexLabel, indexNumber);
+
+  const content = document.createElement('div');
+  content.className = 'story-content';
+
+  const meta = document.createElement('p');
+  meta.className = 'story-meta';
+  const time = document.createElement('time');
+  time.dateTime = String(post.date || '');
+  time.textContent = formatStoryDate(post.date);
+  const category = document.createElement('span');
+  category.textContent = 'JOURNAL';
+  meta.append(time, category);
+
+  const title = document.createElement('h3');
+  title.textContent = String(post.title || '(제목 없음)');
+
+  const summary = document.createElement('p');
+  summary.textContent = String(post.summary || '');
+
+  const link = document.createElement('a');
+  link.className = 'read-status';
+  link.href = getStoryUrl(post);
+  link.setAttribute('aria-label', `${title.textContent} 읽기`);
+  link.append('글 읽기 ');
+  const arrow = document.createElement('span');
+  arrow.setAttribute('aria-hidden', 'true');
+  arrow.textContent = '↗';
+  link.append(arrow);
+
+  content.append(meta, title);
+  if (summary.textContent) content.append(summary);
+  content.append(link);
+  article.append(indexPanel, content);
+  return article;
+};
+
+const setStoryMessage = (message, state) => {
+  if (!storyList) return;
+  const status = document.createElement('p');
+  status.className = 'story-status';
+  status.dataset.state = state;
+  status.textContent = message;
+  storyList.replaceChildren(status);
+  storyList.setAttribute('aria-busy', 'false');
+};
+
+const loadStories = async () => {
+  if (!storyList) return;
+
+  try {
+    const response = await fetch('./story/posts.json', {
+      cache: 'no-cache',
+      headers: { Accept: 'application/json' },
+    });
+    if (!response.ok) throw new Error(`이야기 데이터 요청 실패: ${response.status}`);
+
+    const posts = await response.json();
+    if (!Array.isArray(posts) || posts.length === 0) {
+      setStoryMessage('아직 등록된 이야기가 없습니다.', 'empty');
+      return;
+    }
+
+    const latestPosts = posts
+      .filter((post) => post && typeof post === 'object')
+      .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')))
+      .slice(0, 3);
+    const fragment = document.createDocumentFragment();
+    latestPosts.forEach((post, index) => fragment.append(createStoryCard(post, index)));
+    storyList.replaceChildren(fragment);
+    storyList.setAttribute('aria-busy', 'false');
+  } catch (error) {
+    const message = window.location.protocol === 'file:'
+      ? '이야기 목록은 로컬 서버에서 확인할 수 있습니다.'
+      : '이야기를 불러오지 못했습니다. 잠시 후 다시 확인해 주세요.';
+    setStoryMessage(message, 'error');
+    console.error(error);
+  }
+};
+
 const closeMenu = () => {
   menuToggle.setAttribute('aria-expanded', 'false');
   menuToggle.querySelector('.sr-only').textContent = '메뉴 열기';
@@ -221,3 +328,4 @@ document.querySelector('[data-year]').textContent = new Date().getFullYear();
 setActiveSection(sections[0]);
 updateScrollData();
 loadProducts();
+loadStories();

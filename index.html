@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#090a08">
   <title>MWC 시계 — Mil-W-46374B 데저트카키</title>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="styles.css?v=20260829-14">
-  <script src="script.js?v=20260829-4" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260829-16">
+  <script src="script.js?v=20260829-5" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 바로가기</a>
@@ -29,7 +29,7 @@
       <a href="#home" data-nav-link><span class="nav-code" aria-hidden="true">#home</span>홈</a>
       <a href="#about" data-nav-link><span class="nav-code" aria-hidden="true">#about</span>브랜드</a>
       <a href="#product" data-nav-link><span class="nav-code" aria-hidden="true">#product</span>제품</a>
-      <a href="#stories" data-nav-link><span class="nav-code" aria-hidden="true">#stories</span>이야기</a>
+      <a href="story/" data-nav-link><span class="nav-code" aria-hidden="true">#stories</span>이야기</a>
       <a href="#contact" data-nav-link><span class="nav-code" aria-hidden="true">#contact</span>연락하기</a>
     </nav>
 
@@ -248,42 +248,12 @@
         <p>크기 조정, 원 규격의 단면, 군용 스트랩 도면을 실제 자료와 함께 차근차근 기록합니다.</p>
       </div>
 
-      <div class="story-list">
-        <article class="story-card story-featured" data-reveal>
-          <figure class="story-media">
-            <img src="assets/story-size-comparison.png" alt="38 mm MWC 데저트카키와 1970년대 34 mm 해밀턴 MIL-W-46374B를 나란히 비교한 이미지" width="696" height="529" loading="lazy">
-          </figure>
-          <div class="story-content">
-            <p class="story-meta"><time datetime="2026-08-29">2026.08.29</time><span>DESIGN LOG</span></p>
-            <h3>34 mm에서 38 mm로</h3>
-            <p>1970년대 34 mm 원형과 MWC의 38 mm를 나란히 놓고, 원형의 단정한 인상을 오늘의 손목에 맞춘 과정을 살펴봅니다.</p>
-            <a class="read-status" href="assets/story-size-comparison.png" target="_blank" rel="noopener">비교 이미지 확대 보기 <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
+      <div class="story-list" data-story-list aria-live="polite" aria-busy="true" data-reveal>
+        <p class="story-status">최신 이야기를 불러오는 중입니다.</p>
+      </div>
 
-        <article class="story-card" data-reveal>
-          <figure class="story-media">
-            <img src="assets/story-mil-w-46374b-section-drawing.png" alt="MIL-W-46374B 시계 케이스의 단면 구조를 보여주는 설계도" width="732" height="551" loading="lazy">
-          </figure>
-          <div class="story-content">
-            <p class="story-meta"><time datetime="2026-08-12">2026.08.12</time><span>ARCHIVE</span></p>
-            <h3>MIL-W-46374B 설계도 읽기</h3>
-            <p>원 규격의 단면 설계도를 따라 케이스·글라스·크라운이 배치되는 방식을 읽고, 데저트카키에 이어진 구조적 인상을 살펴봅니다.</p>
-            <a class="read-status" href="assets/story-mil-w-46374b-section-drawing.png" target="_blank" rel="noopener">설계도 확대 보기 <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-
-        <article class="story-card" data-reveal>
-          <figure class="story-media">
-            <img src="assets/story-mil-s-60127-strap-spec.png" alt="미국 국방부 군용 시계 스트랩 규격 MIL-S-60127(MU) 도면과 올리브색 나일론 스트랩" width="732" height="540" loading="lazy">
-          </figure>
-          <div class="story-content">
-            <p class="story-meta"><time datetime="2026-07-28">2026.07.28</time><span>MATERIAL</span></p>
-            <h3>손목과 도구를 잇는 스트랩</h3>
-            <p>미 국방부 규격 MIL-S-60127(MU)의 열접합, 버클 구조와 균일한 홀 배치를 바탕으로 복각 스트랩의 제작 기준을 기록합니다.</p>
-            <a class="read-status" href="assets/story-mil-s-60127-strap-spec.png" target="_blank" rel="noopener">스트랩 규격도 확대 보기 <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
+      <div class="stories-actions" data-reveal>
+        <a class="button button-light" href="story/">이야기 더 보기 <span aria-hidden="true">↗</span></a>
       </div>
     </section>
 

@@ -789,9 +789,8 @@ section { position: relative; }
   transition: transform 420ms var(--ease), filter 420ms var(--ease);
 }
 .product-catalog-more .catalog-card-image img {
-  box-sizing: border-box;
-  padding: clamp(22px, 3vw, 42px);
-  object-fit: contain;
+  padding: 0;
+  object-fit: cover;
   object-position: 50% 50%;
 }
 .catalog-card-image.is-image-error::after {

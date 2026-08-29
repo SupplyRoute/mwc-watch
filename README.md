@@ -12,7 +12,7 @@ MWC 시계와 첫 제품 **Mil-W-46374B 데저트카키**를 소개하는 한국
 
 ## 실행
 
-빌드 도구와 설치 과정이 없습니다. 저장소 최상위의 `index.html`을 브라우저에서 열면 됩니다. 로컬 서버가 필요하다면 다음처럼 실행할 수 있습니다.
+빌드 도구와 설치 과정이 없습니다. 제품 데이터는 `products.json`에서 읽기 때문에 아래처럼 간단한 로컬 서버로 실행해 주세요.
 
 ```powershell
 python -m http.server 8000
@@ -23,6 +23,7 @@ python -m http.server 8000
 ## 수정할 곳
 
 - 텍스트 및 섹션 구조: `index.html`
+- 제품명·가격·이미지·구매 링크: `products.json`
 - 색상·타이포그래피·반응형 스타일: `styles.css`
 - 모바일 메뉴·스크롤 상태: `script.js`
 - 홈 착용 이미지: `assets/desert-khaki-on-wrist.jpg`
@@ -31,6 +32,19 @@ python -m http.server 8000
 - 무브먼트 조립·분해도: `assets/miyota-2035-exploded-view.jpg`
 - 디자인 원칙과 토큰: `DESIGN.md`
 - 웹폰트: [Pretendard Variable v1.3.9](https://github.com/orioncactus/pretendard) 가변 다이나믹 서브셋
+
+## 제품 추가
+
+`products.json` 배열에 아래 형식의 항목을 추가하면 제품 섹션에 자동으로 나타납니다. 홈 화면에는 배열의 앞쪽 3개 제품이 대표 제품으로 표시됩니다.
+
+```json
+{
+  "name": "제품명",
+  "price": 159000,
+  "image": "https://이미지-주소",
+  "purchaseUrl": "https://구매-페이지-주소"
+}
+```
 
 제작자 사진, 연락처와 일부 이야기 글은 현재 자연스러운 임시 문구로 채워져 있습니다. 실제 정보가 정해지면 반드시 교체해 주세요.
 

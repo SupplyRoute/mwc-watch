@@ -72,13 +72,15 @@ const createProductCard = (product, index, variant = 'default') => {
   price.className = 'catalog-card-price';
   price.textContent = `${priceFormatter.format(product.price)}원`;
 
-  const buyLink = document.createElement('a');
+  const buyLink = document.createElement('button');
   buyLink.className = 'catalog-buy';
-  buyLink.href = product.purchaseUrl;
-  buyLink.target = '_blank';
-  buyLink.rel = 'noopener noreferrer';
-  buyLink.setAttribute('aria-label', `${product.name} 구매하기(새 탭)`);
-  buyLink.append('구매하기 ');
+  buyLink.type = 'button';
+  buyLink.setAttribute('data-cart-add', '');
+  buyLink.setAttribute('data-name', product.name);
+  buyLink.setAttribute('data-price', String(product.price));
+  buyLink.setAttribute('data-url', product.purchaseUrl);
+  buyLink.setAttribute('aria-label', `${product.name} 장바구니에 담기`);
+  buyLink.append('장바구니 담기 ');
 
   const arrow = document.createElement('span');
   arrow.setAttribute('aria-hidden', 'true');

@@ -1156,6 +1156,16 @@ body {
   box-shadow: inset 0 -1px rgb(0 0 0 / .5);
 }
 .site-header.is-scrolled { background: rgb(var(--ink-rgb) / .975); }
+.home-scrub .site-header:not(.is-scrolled) {
+  background: transparent;
+  border-bottom-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.home-scrub.menu-open .site-header {
+  background: rgb(var(--ink-rgb) / .96);
+  border-bottom-color: rgb(var(--brass-rgb) / .3);
+}
 .site-nav a { color: rgb(var(--paper-rgb) / .62); }
 .site-nav a:hover,
 .site-nav a.is-active { color: var(--paper-bright); }
@@ -1234,6 +1244,17 @@ body {
 .hero-strip div { border-right-color: rgb(var(--brass-rgb) / .2); }
 .hero-strip span { color: rgb(var(--brass-rgb) / .62); }
 .hero-strip strong { color: var(--paper-bright); font-family: var(--editorial); font-size: .86rem; font-weight: 700; }
+
+.home-featured {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(rgb(var(--brass-rgb) / .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--brass-rgb) / .045) 1px, transparent 1px),
+    radial-gradient(circle at 74% 16%, rgb(var(--brass-rgb) / .13), transparent 28%),
+    var(--ink);
+  background-size: 52px 52px, 52px 52px, auto, auto;
+}
 
 .about {
   background:

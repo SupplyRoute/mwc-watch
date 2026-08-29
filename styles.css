@@ -788,6 +788,12 @@ section { position: relative; }
   filter: saturate(.82) contrast(1.04);
   transition: transform 420ms var(--ease), filter 420ms var(--ease);
 }
+.product-catalog-more .catalog-card-image img {
+  box-sizing: border-box;
+  padding: clamp(22px, 3vw, 42px);
+  object-fit: contain;
+  object-position: 50% 50%;
+}
 .catalog-card-image.is-image-error::after {
   content: "IMAGE / UNAVAILABLE";
   color: #55574f;

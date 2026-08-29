@@ -123,9 +123,15 @@ const loadProducts = async () => {
     }
     if (!products.every(isProduct)) throw new Error('제품 데이터 형식이 올바르지 않습니다.');
 
-    renderProducts(homeProducts, products, { limit: 3, variant: 'home' });
-    renderProducts(productList, products);
-    if (productCount) productCount.textContent = `PRODUCTS / ${String(products.length).padStart(2, '0')}`;
+    const featuredProducts = products.filter((product) => product.group !== 'other');
+    const otherProducts = products.filter((product) => product.group === 'other');
+    renderProducts(homeProducts, featuredProducts.length ? featuredProducts : products, { limit: 3, variant: 'home' });
+    if (otherProducts.length) {
+      renderProducts(productList, otherProducts);
+    } else {
+      setCatalogMessage(productList, '곧 다른 MWC 제품을 추가하겠습니다.', 'empty');
+    }
+    if (productCount) productCount.textContent = `PRODUCTS / ${String(otherProducts.length).padStart(2, '0')}`;
   } catch (error) {
     const message = window.location.protocol === 'file:'
       ? '제품 목록은 로컬 서버에서 확인할 수 있습니다.'

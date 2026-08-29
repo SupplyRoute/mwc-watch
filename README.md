@@ -35,14 +35,15 @@ python -m http.server 8000
 
 ## 제품 추가
 
-`products.json` 배열에 아래 형식의 항목을 추가하면 제품 섹션에 자동으로 나타납니다. 홈 화면에는 배열의 앞쪽 3개 제품이 대표 제품으로 표시됩니다.
+`products.json` 배열에 아래 형식의 항목을 추가하면 제품 섹션에 자동으로 나타납니다. `group`이 `featured`인 제품은 홈 대표 제품으로, `other`인 제품은 하단의 “MWC의 다른 제품 만나보기” 영역으로 표시됩니다.
 
 ```json
 {
   "name": "제품명",
   "price": 159000,
   "image": "https://이미지-주소",
-  "purchaseUrl": "https://구매-페이지-주소"
+  "purchaseUrl": "https://구매-페이지-주소",
+  "group": "featured"
 }
 ```
 

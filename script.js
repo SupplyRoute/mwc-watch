@@ -44,6 +44,15 @@ const createProductCard = (product, index, variant = 'default') => {
   image.loading = 'lazy';
   image.decoding = 'async';
   image.referrerPolicy = 'no-referrer';
+  if (Number.isFinite(product.imageScale) && product.imageScale > 0) {
+    image.style.setProperty('--product-scale', String(product.imageScale));
+  }
+  if (typeof product.imageShiftX === 'string' && product.imageShiftX.trim()) {
+    image.style.setProperty('--product-shift-x', product.imageShiftX.trim());
+  }
+  if (typeof product.imageShiftY === 'string' && product.imageShiftY.trim()) {
+    image.style.setProperty('--product-shift-y', product.imageShiftY.trim());
+  }
   image.addEventListener('error', () => {
     figure.classList.add('is-image-error');
     image.hidden = true;
